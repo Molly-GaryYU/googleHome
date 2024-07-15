@@ -1,0 +1,30 @@
+.underside{
+    width: 100%;
+    position: fixed;
+    z-index:1;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    line-height: 39px;
+    height: 39px;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+    color: #bbb;
+}
+ .underside a:hover{
+    color: #222;
+    cursor: pointer;
+}
+.underside span{
+    margin-left: 10px;
+}
+.underside span img{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+}
+.underside a{
+    margin-left: 10px;
+}

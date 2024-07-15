@@ -1,0 +1,23 @@
+/* @media(max-width:1120px){
+ .userInfo{
+     visibility: none;
+ };
+ .baiduSearch{
+    visibility: none;
+ };
+ .bottomField--left__article__main{
+    visibility: none;
+ }
+} */
+body{
+    margin: 0 4px;
+}
+.mainFrame{
+    width: 100%;
+    min-width: 1300px;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
