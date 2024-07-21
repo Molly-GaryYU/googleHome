@@ -91,6 +91,14 @@
     height: 20px;
     margin-right: 14px; 
 }
+
+.search--area__form--right--picture--hover{
+    width:20px ;
+    height: 20px;
+    margin-right: 12px; 
+    margin-bottom: 1px;
+}
+
 .search--button{
     display: flex;
     width: 100%;
@@ -131,5 +139,7 @@
 .search--button--searchimg{
     width: 15px;
     height: 22px;
-    margin-right: 10px;
+    margin-right: 12px;
+    margin-bottom: 1px;
+    
 }

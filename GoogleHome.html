@@ -152,6 +152,7 @@ buttonSertchElem.addEventListener("mouseleave",function(){
    this.classList.add('button-border');
     }
 });
+//抽屉
 buttonLuckyElem.addEventListener("click",function(){
     clickOrNot=false;
     buttonSertchElem.classList.remove('button-border-hover');
@@ -162,6 +163,7 @@ buttonSertchElem.addEventListener("click",function(){
     clickOrNot=true;
     addBorder();
 });
+//收缩框悬停样式更改
 serchFrameElem.addEventListener("mouseover",()=>{
     serchFrameElem.classList.add('search--area__form--background');
     inputElem.classList.add("search--area__form--background")
@@ -170,6 +172,7 @@ serchFrameElem.addEventListener("mouseover",()=>{
     maikeImg.src="img/img-google/hoverMaike.png";
     searchImg.src="img/img-google/hoverSearch.png";
     pictureImg.src="img/img-google/hoverPicture.png";
+    pictureImg.classList.add("search--area__form--right--picture--hover");
 });
 serchFrameElem.addEventListener("mouseleave",()=>{
     serchFrameElem.classList.remove('search--area__form--background');
@@ -179,10 +182,12 @@ serchFrameElem.addEventListener("mouseleave",()=>{
     maikeImg.src="img/img-google/maike.png";
     searchImg.src="img/img-google/search.png";
     pictureImg.src="img/img-google/picture.png";
+    pictureImg.classList.remove("search--area__form--right--picture--hover");
 });
 
 
 // 方法
+  //抽屉内容更新
 function analysMoreData(data){
     data.forEach((element,i) => {
         //每一个大类就添加一个父标签div
