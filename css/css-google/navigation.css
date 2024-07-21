@@ -55,7 +55,6 @@
     border-radius: 100px;
    } 
 .navigation__nav__dialog{
-
     position: fixed;
     top: 60px;
     left: 70%;
@@ -91,8 +90,9 @@
     align-items: center;
 }
 .navigation__nav__dialog--display--type--box__img{
-    width: 50px;
-    height: 50px; 
+    width: 40px;
+    height: 40px; 
+    margin-top: 10px;
 }
 .navigation__nav__dialog--display--type--box:hover{
     background-color: rgba(32, 33, 36, 1);
@@ -127,10 +127,8 @@
   /* 滑动块 */
   ::-webkit-scrollbar-thumb{
     border-radius: 10px;
-    background-color: rgb(214, 213, 213);
-
+    background-color: rgb(78, 78, 78);
   }
-
   .navigation__nav__dialog--display--type--child{
     margin-top: 30px;
     width: 100%;
