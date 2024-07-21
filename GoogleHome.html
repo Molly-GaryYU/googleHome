@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/css-google/googleHome.css">
+        <link rel="stylesheet" href="css/css-google/navigation.css">
+        <link rel="stylesheet" href="css/css-google/search.css">
+        <link rel="stylesheet" href="css/css-google/bottom.css">
+        
+    </head>
+    <body>
+        <div class="main-frame" id="main-frame">
+            <!-- 导航栏 -->
+            <div class="navigation">
+                <nav class="navigation__nav ">
+                  
+                        <div class="navigation__nav--img ">
+                            <a href="aaa" alt="">图片</a>
+                        </div>
+                        <div class="navigation__nav--more " id="ninePoint">
+                            <img class="navigation__nav--more__img" src="img/img-google/ninePoint.png" alt="">
+                        </div>
+                        <div id="navigation__nav__dialog" class="navigation__nav__dialog" style="display: none;">
+                            <div id="navigation__nav__dialog--display" class="navigation__nav__dialog--display">
+                                  <!-- 内容填充 -->
+                            </div>
+                        </div>
+                        <div class="navigation__nav--login">
+                            <a class="navigation__nav--login__a">登录</a>
+                        </div>
+                    
+                </nav>
+            </div>
+             <!-- 搜索栏 -->
+             <div class="search">
+                 <!-- logo -->
+                 <div class="search--logo flex--center">
+                    <img class="search--logo__img" src="img\img-google\logo.png" alt="">
+                 </div>
+                 <!-- 搜索框 -->
+                  <div class="search--area">
+                      <div class="search--area__form">
+                             <!-- 搜索框左-->
+                          <div class="search--area__form--left ">
+                            <img class="search--area__form--left__img" src="img\img-google\search.png" alt="">
+                             <input class="search--area__form__input" type="">
+                          </div>
+                            <!-- 搜索框右-->
+                          <div class="search--area__form--right">
+                                <img class="search--area__form--right--hidden" id="delete" src="img\img-google\delete.png" alt="">
+                                <span class="search--area__form--right--line"></span>
+                                <img class="search--area__form--right--maike" src="img\img-google\maike.png" alt="">
+                                <img class="search--area__form--right--picture" src="img\img-google\picture.png" alt="">         
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 按钮 -->
+                  <div class="search--button">
+                        <button id="buttonSertch" class="button-border search--button__button search--button--search">Google 搜索</button>
+                        <button id="buttonLucky" class="button-border search--button__button search--button--lucky">手气不错</button>
+                  </div>
+             </div>
+             <!-- 版权 -->
+             <div class="bottom">
+                  <nav class="bottom--left">
+                    <a class="bottom__a">关于 Google</a>
+                    <a class="bottom__a">广告</a>
+                    <a class="bottom__a">商务</a>
+                    <a class="bottom__a">Google 搜索运动方式</a>
+                  </nav>
+                  <nav class="bottom--right">
+                    <a class="bottom__a">隐私权</a>
+                    <a class="bottom__a">条款</a>
+                    <a class="bottom__a">设置</a>
+                  </nav>
+             </div>
+        </div>
+    </body>
+</html>
+<style>
+</style>
+<script>
+// 节点捕获 与 变量
+const moreData=[{googleApp:[
+{name:'账号' ,imgUrl:'img/img-google/app1.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
+{name:'地图' ,imgUrl:'img/img-google/app3.png'}
+]}
+,{
+anthorApp:[
+{name:'新闻' ,imgUrl:'img/img-google/app4.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Meet' ,imgUrl:'img/img-google/app6.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
+{name:'Gemail' ,imgUrl:'img/img-google/app5.png'}
+]},];
+const ninePointElem=document.getElementById('ninePoint');
+const buttonLuckyElem=document.getElementById('buttonLucky')
+const buttonSertchElem=document.getElementById('buttonSertch')
+const displayElem=document.getElementById('navigation__nav__dialog--display');
+const dialog=document.getElementById('navigation__nav__dialog');
+
+
+let clickOrNot=false;
+let buttonLuckyClickOrNot=false;
+let clickNum=0;
+
+// 监听器
+ninePointElem.addEventListener("click",()=>{
+    dialog.style.display='block';
+    clickNum++;
+    if(clickNum==1){
+      analysMoreData(moreData);
+    }
+})
+dialog.addEventListener("click",function(event){
+       //点击是否在抽屉内
+      if(dialog.contains(event.target)){
+        dialog.style.display='none';
+      }else{
+       
+      }
+})
+// ninePointElem.addEventListener("click",analysMoreData(moreData))
+ninePointElem.addEventListener("mouseenter",ninepointAddBackground);
+ninePointElem.addEventListener("mouseleave",ninepointRemoveBackground);
+
+buttonLuckyElem.addEventListener("mouseenter",addBorder);
+buttonLuckyElem.addEventListener("mouseleave",removeBorder);
+buttonSertchElem.addEventListener("mouseenter",addBorder);
+buttonSertchElem.addEventListener("mouseleave",function(){
+    if(!clickOrNot){
+   this.classList.remove('button-border-hover');
+   this.classList.add('button-border');
+    }
+});
+buttonLuckyElem.addEventListener("click",function(){
+    clickOrNot=false;
+    buttonSertchElem.classList.remove('button-border-hover');
+    buttonSertchElem.classList.add('button-border');
+    addBorder();
+});
+buttonSertchElem.addEventListener("click",function(){
+    clickOrNot=true;
+    addBorder();
+});
+
+
+
+// 方法
+function analysMoreData(data){
+    data.forEach((element,i) => {
+        //每一个大类就添加一个父标签div
+        // let divSign ="<div id=\"navigation__nav__dialog--display--box \" class=\"navigation__nav__dialog--display--box \">"+"<ul>"+"</ul>";
+        let BigBox=document.createElement("div");
+        displayElem.append(BigBox);
+        BigBox.classList.add('navigation__nav__dialog--display--type');
+        let BigBox_child=document.createElement("div");
+        BigBox.append(BigBox_child)
+        BigBox_child.classList.add('navigation__nav__dialog--display--type--child');
+        let arrayData=Object.values(element);
+        arrayData.forEach(elem=>{
+        elem.forEach((e,index)=>{
+        let box=document.createElement("a");
+        box.classList.add('navigation__nav__dialog--display--type--box');
+        BigBox_child.append(box);
+        box_div=document.createElement("div");
+        box.append(box_div);
+        let box_div_img=document.createElement("img");
+        box_div.append(box_div_img);
+        box_div_img.classList.add('navigation__nav__dialog--display--type--box__img');
+        box_div_img.src=elem[index].imgUrl;
+        let box_div_span=document.createElement("span");
+        box_div_span.textContent=elem[index].name;
+        box.append(box_div_span);
+        }) 
+        }) 
+      });
+}
+function addBorder(){
+   this.classList.remove('button-border');
+   this.classList.add('button-border-hover');
+}
+ function removeBorder(){
+   this.classList.remove('button-border-hover');
+   this.classList.add('button-border');
+}
+ function ninepointAddBackground(){
+    this.classList.add('navigation__nav--img--background');
+}
+
+function ninepointRemoveBackground(){
+    this.classList.remove('navigation__nav--img--background');
+}
+function buttonLuckyAddBorder(){
+
+}
+</script>

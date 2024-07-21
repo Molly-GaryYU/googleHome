@@ -1,0 +1,126 @@
+.search{
+    width: 100%;
+    height: 150px;
+}
+.search--logo__img{
+    width: 272px;
+    height: 92px;
+    margin-top: 11px;
+    margin-right: 1px;
+}
+.search--logo{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search--area{
+   width: 100%;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 26px;
+}
+.search--area__form__input{
+    outline: none;
+    height: 46px;
+    width: 60%;
+    background-color: rgba(32, 33, 36, 1);
+    border: none;
+    overflow: hidden;
+    color: #e8eaed;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    line-height: 22px;
+    margin-left: 12px;
+}
+.search--area__form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 582px;
+    height: 46px;
+    border: 1px solid #5f6368;
+    border-radius: 50px;
+}
+.search--area__form--left{
+    width: 70%;
+    display: flex;
+    align-items: center;
+
+}
+.search--area__form--left__img{
+    width:16px;
+    height: 16px;
+    margin-left: 15px;
+}
+.search--area__form--right{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 22%;
+ 
+}
+.search--area__form--right--line{
+    display: block;
+    border-left: 1px solid #5f6368;
+    height: 28px;
+    margin-left: 10px;
+    visibility: hidden;
+}
+.search--area__form--right--maike{
+    width:37px ;
+    height: 35px;
+    margin-right: 6px;
+}
+/* .search--area img{
+    width:30px ;
+    height: 30px;
+    mix-blend-mode: multiply;
+} */
+.search--area__form--right--hidden{
+  width: 18px;
+  height: 18px;
+  visibility: hidden;
+}
+.search--area__form--right--picture{
+    width:21.5px ;
+    height: 20px;
+    margin-right: 14px; 
+}
+.search--button{
+    display: flex;
+    width: 100%;
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17px;
+}
+.search--button__button{
+  background-color: #303134;
+  border-radius: 4px;
+  color: #e8eaed;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 11px 4px;
+  line-height: 27px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.search--button--search{
+    margin-right: 6px;
+    padding: 0px 16px 0 16px;
+}
+.search--button--lucky{
+    margin-left: 6px;
+    padding: 0px 20px 0 20px;
+}
+.button-border-hover{
+  border: 1px solid #5f6368;
+}
+.button-border{
+  border: 1px solid #303134;
+}
