@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/css-google/navigation.css">
         <link rel="stylesheet" href="css/css-google/search.css">
         <link rel="stylesheet" href="css/css-google/bottom.css">
-        
+        <script src="js/googleJS/search.js"></script>
     </head>
     <body>
         <div class="main-frame" id="main-frame">
@@ -32,32 +32,43 @@
                 </nav>
             </div>
              <!-- 搜索栏 -->
-             <div class="search">
+             <div id="main-search" class="search">
                  <!-- logo -->
                  <div class="search--logo flex--center">
                     <img class="search--logo__img" src="img\img-google\logo.png" alt="">
                  </div>
-                 <!-- 搜索框 -->
-                  <div class="search--area">
-                      <div class="search--area__form" id="serchFrame">
-                             <!-- 搜索框左-->
-                          <div class="search--area__form--left ">
-                            <img id="searchImg" class="search--area__form--left__img" src="img\img-google\search.png" alt="">
-                             <input id="search--area__form__input--input" class="search--area__form__input" type="">
-                          </div>
-                            <!-- 搜索框右-->
-                          <div class="search--area__form--right">
-                                <img  class="search--area__form--right--hidden" id="delete" src="img\img-google\delete.png" alt="">
-                                <span class="search--area__form--right--line"></span>
-                                <img id="maike" class="search--area__form--right--maike" src="img\img-google\maike.png" alt="">
-                                <img id="picture" class="search--area__form--right--picture" src="img\img-google\picture.png" alt="">         
-                          </div>
-                      </div>
-                  </div>
+                <!-- 搜索框+按钮 -->
+                <div id="search--area" class="search--area">
+                    <!-- 搜索框 -->
+
+                    <div class="search--area__form" id="serch--frame">
+                        <div class="search--area__form--top">
+                            <div class="search--area__form--top__div" id="search--area__form--top__div">
+                                <!-- 搜索框左-->
+                                <div class="search--area__form--left ">
+                                    <img id="searchImg" class="search--area__form--left__img" src="img\img-google\search.png" alt="">
+                                    <input id="search--area__form__input--input" class="search--area__form__input" >
+                                </div>
+                                <!-- 搜索框右-->
+                                <div class="search--area__form--right">
+                                    <img class="search--area__form--right--hidden search--area__form--right--hide" id="search--area__form--right--hidden" src="img\img-google\delete.png" alt="">
+                                    <span class="search--area__form--right--line search--area__form--right--hide" id="search--area__form--right--line"></span>
+                                    <img id="maike" class="search--area__form--right--maike" src="img\img-google\maike.png" alt="">
+                                    <img id="picture" class="search--area__form--right--picture" src="img\img-google\picture.png"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="search--area--line" class="search--area--line diaplay--none"></div>
+                        
+                         <!-- 检索内容 -->
+                   <div id="search--area__form--data"  class=" search--area__form--data diaplay--none">
+               </div>
+                </div>
                   <!-- 按钮 -->
-                  <div class="search--button">
-                        <button id="buttonSertch" class="button-border search--button__button search--button--search">Google 搜索</button>
-                        <button id="buttonLucky" class="button-border search--button__button search--button--lucky">手气不错</button>
+                  <div id="search--button" class="search--button">
+                        <button id="buttonSertch" class="button--background button-border search--button__button search--button--search">Google 搜索</button>
+                        <button id="buttonLucky" class="button--background button-border search--button__button search--button--lucky">手气不错</button>
                   </div>
              </div>
              <!-- 版权 -->
@@ -80,52 +91,46 @@
 <style>
 </style>
 <script>
-// 节点捕获 与 变量
-const moreData=[{googleApp:[
-{name:'账号' ,imgUrl:'img/img-google/app1.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'搜索' ,imgUrl:'img/img-google/app2.png'},
-{name:'地图' ,imgUrl:'img/img-google/app3.png'}
-]}
-,{
-anthorApp:[
-{name:'新闻' ,imgUrl:'img/img-google/app4.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Meet' ,imgUrl:'img/img-google/app6.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'},
-{name:'Gemail' ,imgUrl:'img/img-google/app5.png'}
-]},];
+
+
+const searchData=[
+{name:"啊",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"",introduceOrNot:false},
+{name:"啊吗粽",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"音乐家",introduceOrNot:true},
+{name:"啊朋友再见",img:true,imgUrl:"img/img-google/serchImg1.png",introduce:"歌曲",introduceOrNot:true},
+{name:"啊 meaning",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"",introduceOrNot:false},
+{name:"啊!海军",img:true,imgUrl:"img/img-google/searchImg2.png",introduce:"1969年的电影",introduceOrNot:true},
+{name:"啊 表情包",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"",introduceOrNot:false},
+{name:"啊哈加速器",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"",introduceOrNot:false},
+{name:"啊哈",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"",introduceOrNot:false},
+{name:"啊实打实",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"",introduceOrNot:false},
+{name:"啊的变调",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"",introduceOrNot:false}
+];
+const searchArea=document.getElementById('search--area')
 const ninePointElem=document.getElementById('ninePoint');
 const buttonLuckyElem=document.getElementById('buttonLucky')
 const buttonSertchElem=document.getElementById('buttonSertch')
 const displayElem=document.getElementById('navigation__nav__dialog--display');
 const dialog=document.getElementById('navigation__nav__dialog');
-const serchFrameElem=document.getElementById('serchFrame');
+const serchFrameElem=document.getElementById('serch--frame');
 const searchImg=document.getElementById('searchImg');
 const maikeImg=document.getElementById('maike');
 const pictureImg=document.getElementById('picture');
 const inputElem=document.getElementById('search--area__form__input--input');
-
+const searchDataElem=document.getElementById('search--area__form--data')
+const totalHtml=document.getElementById('main-frame');
+let deleteImg=document.getElementById("search--area__form--right--hidden");
+let deleteLine= document.getElementById("search--area__form--right--line");
+//控制变量
 let clickOrNot=false;
 let buttonLuckyClickOrNot=false;
 let clickNum=0;
+let searchAreaIsEmpty=true;
+let entetNum=0;
+let inputSearchFocusOrNot=false;
+
 
 // 监听器
+//抽屉图标悬停
 ninePointElem.addEventListener("click",()=>{
     dialog.style.display='block';
     clickNum++;
@@ -133,9 +138,10 @@ ninePointElem.addEventListener("click",()=>{
       analysMoreData(moreData);
     }
 })
+//抽屉展开
 dialog.addEventListener("click",function(event){
        //点击是否在抽屉内
-       let orNot=dialog.contains(event.target)
+       let orNot=!dialog.contains(event.target)
       if(orNot){
         dialog.style.display='none';
       }
@@ -152,7 +158,6 @@ buttonSertchElem.addEventListener("mouseleave",function(){
    this.classList.add('button-border');
     }
 });
-//抽屉
 buttonLuckyElem.addEventListener("click",function(){
     clickOrNot=false;
     buttonSertchElem.classList.remove('button-border-hover');
@@ -163,28 +168,81 @@ buttonSertchElem.addEventListener("click",function(){
     clickOrNot=true;
     addBorder();
 });
+//input选中时背景
+inputElem.addEventListener("focus",()=>{
+    inputSearchFocusOrNot=true;
+    searchAreaEnterOrHover();
+})
 //收缩框悬停样式更改
 serchFrameElem.addEventListener("mouseover",()=>{
-    serchFrameElem.classList.add('search--area__form--background');
-    inputElem.classList.add("search--area__form--background")
-    maikeImg.classList.remove("search--area__form--right--maike");
-    maikeImg.classList.add("search--button--searchimg");
-    maikeImg.src="img/img-google/hoverMaike.png";
-    searchImg.src="img/img-google/hoverSearch.png";
-    pictureImg.src="img/img-google/hoverPicture.png";
-    pictureImg.classList.add("search--area__form--right--picture--hover");
+        searchAreaEnterOrHover();
 });
+//鼠标移出恢复搜索框样式
 serchFrameElem.addEventListener("mouseleave",()=>{
-    serchFrameElem.classList.remove('search--area__form--background');
-    inputElem.classList.remove("search--area__form--background")
-    maikeImg.classList.add("search--area__form--right--maike");
-    maikeImg.classList.remove("search--button--searchimg")
-    maikeImg.src="img/img-google/maike.png";
-    searchImg.src="img/img-google/search.png";
-    pictureImg.src="img/img-google/picture.png";
-    pictureImg.classList.remove("search--area__form--right--picture--hover");
+        serchFrameElemCssRecover();
 });
+//整体页面监听，控制抽屉和搜索框display
+totalHtml.addEventListener("click",(event)=>{
+    console.log("HTML in");
+    let sign=event.target;
+    if(serchFrameElem.contains(sign)){
+        console.log("点击在搜索框内")
+        dialog.style.display='none';
+    }
+    else if(dialog.contains(sign)){
+        console.log("点击在抽屉")
+        if( inputElem.value=="" ||inputElem.value==null){
+            inputSearchFocusOrNot = false;
+            deleteImg.classList.remove("search--area__form--right--display");
+            deleteLine.classList.remove("search--area__form--right--display ");
+            deleteImg.classList.add("search--area__form--right--hide");
+            deleteLine.classList.add("search--area__form--right--hide");
+        }
+        serchFrameElemCssRecover()
+        let child= document.getElementsByClassName("change");
+        searchDataElem.innerHTML='';
+    }
+    else if(ninePointElem.contains(sign)){
+        console.log(child);
+         console.log("抽屉按钮点击");
+         if( inputElem.value=="" ||inputElem.value==null){
+            inputSearchFocusOrNot=false;
+            deleteImg.classList.remove("search--area__form--right--display");
+            deleteLine.classList.remove("search--area__form--right--display");
+            deleteImg.classList.add("search--area__form--right--hide");
+            deleteLine.classList.add("search--area__form--right--hide");
+        }
+         searchDataElem.innerHTML='';
+         serchFrameElemCssRecover();
+         document.getElementById("search--area--line").classList.add("diaplay--none");
+    }
+    else{
+         let child= document.getElementsByClassName("change");
+         console.log(child);
+         console.log("页面点击");
+         if( inputElem.value=="" ||inputElem.value==null){
+            inputSearchFocusOrNot=false;
+            deleteImg.classList.remove("search--area__form--right--display");
+            deleteLine.classList.remove("search--area__form--right--display");
+            deleteImg.classList.add("search--area__form--right--hide");
+            deleteLine.classList.add("search--area__form--right--hide");
+        }
+         searchDataElem.innerHTML='';
+         serchFrameElemCssRecover();
+         document.getElementById("search--area--line").classList.add("diaplay--none");
+         dialog.style.display='none';
+    }
+})
 
+    // 收索内容更新
+    inputElem.addEventListener("input", () => {
+        searchDataElem.innerHTML=''
+        searchAreaEnterOrHover();
+        addDataToSearchArea();  
+        addButtonToSearchArea();
+        addFooterToSearchArea();
+        deletImgDisplay();
+    })
 
 // 方法
   //抽屉内容更新
@@ -228,11 +286,161 @@ function addBorder(){
  function ninepointAddBackground(){
     this.classList.add('navigation__nav--img--background');
 }
-
 function ninepointRemoveBackground(){
     this.classList.remove('navigation__nav--img--background');
 }
 function buttonLuckyAddBorder(){
 
+}
+//搜索框悬停图片替换
+function searchAreaEnterOrHover(){
+    serchFrameElem.classList.add('search--area__form--background');
+        inputElem.classList.add("search--area__form--background")
+        maikeImg.classList.remove("search--area__form--right--maike");
+        maikeImg.classList.add("search--button--searchimg");
+        maikeImg.src = "img/img-google/hoverMaike.png";
+        searchImg.src = "img/img-google/hoverSearch.png";
+        pictureImg.src = "img/img-google/hoverPicture.png";
+        pictureImg.classList.add("search--area__form--right--picture--hover");
+        serchFrameElem.classList.add("border--none");
+}
+
+//搜索下拉框遍历结果
+function addDataToSearchArea(){
+        serchFrameElem.classList.add('search--area__form--background');
+        searchDataElem.classList.remove("diaplay--none");
+        document.getElementById("search--area--line").classList.remove("diaplay--none")
+        searchData.forEach((e, index) => {
+            let searchDataElem_child= document.createElement("div")
+            searchDataElem_child.addEventListener("mouseover",()=>{
+                searchDataElem_child.classList.add("row-hover-background");
+                if(!e.img){
+                    searchDataElem_child_img.src = "img/img-google/searchAreaImgHover.png"
+                }
+                searchDataElem_child.classList.add("row-hover-background");
+            })
+            searchDataElem_child.addEventListener("mouseleave",()=>{
+                searchDataElem_child.classList.remove("row-hover-background");
+                searchDataElem_child_img.src = e.imgUrl
+            })
+            if(index==0){
+                searchDataElem_child.classList.add("search--area__form--data--row--first--row")
+            }else{
+                searchDataElem_child.classList.add("search--area__form--data--row--margin")
+            }
+            searchDataElem_child.classList.add("change");
+            searchDataElem_child.classList.add("search--area__form--data--row")
+            searchDataElem.append(searchDataElem_child);
+            let searchDataElem_child_img = document.createElement("img")
+            let searchDataElem_child_span = document.createElement("span")
+            let searchDataElem_child_div = document.createElement("div")
+            searchDataElem_child_span.innerText = e.name;
+            if (e.img) {
+                searchDataElem_child_img.classList.add("search--area__form--data--row__img");
+                searchDataElem_child_img.classList.add("change")
+                searchDataElem_child_img.src = e.imgUrl;
+                searchDataElem_child.append(searchDataElem_child_img);
+            } else {
+                searchDataElem_child_img.classList.add("search--area__form--data--row__nothing");
+                searchDataElem_child.append(searchDataElem_child_img);
+                searchDataElem_child_img.src = e.imgUrl;
+                searchDataElem_child_img.classList.add("change")
+            }
+            if(e.introduceOrNot){
+                searchDataElem_child_div.classList.add("search--area__form--data--row__div");
+                searchDataElem_child.append(searchDataElem_child_div);
+                searchDataElem_child_div.classList.add("change")
+                let searchDataElem_child_introduce = document.createElement("span");
+                if(!e.img){
+                    searchDataElem_child_introduce.classList.add("search--area__form--data--row__span__none-img");
+                    searchDataElem_child_span.classList.add("search--area__form--data--row__span__none-img");
+                    searchDataElem_child_introduce.classList.add("search--area__form--data--row__author");
+                }else{
+                    searchDataElem_child_introduce.classList.add("search--area__form--data--row__author");
+                }
+                searchDataElem_child_introduce.innerHTML=e.introduce;
+               
+                searchDataElem_child_div.append(searchDataElem_child_span);
+                searchDataElem_child_span.classList.add("change")
+                searchDataElem_child_div.append(searchDataElem_child_introduce);
+                searchDataElem_child_introduce.classList.add("change")
+            }
+            else {
+                searchDataElem_child_span.classList.add("search--area__form--data--row__span");
+                searchDataElem_child.append(searchDataElem_child_span);
+                searchDataElem_child_span.classList.add="change"
+            }
+        })
+}
+//搜索下拉框加入按钮
+function addButtonToSearchArea(){
+    let searchButton =document.getElementById('search--button');
+    searchButton.classList.add("diaplay--none");
+    let searchButtonDiv= document.createElement("div");
+           searchButtonDiv.classList.add("search--button");
+           searchButtonDiv.classList.add("change");
+           searchDataElem.append(searchButtonDiv);
+           let buttonSertch= document.createElement("button");
+           buttonSertch.classList.add("button-border");
+           buttonSertch.classList.add("search--button__button");
+           buttonSertch.classList.add("search--button--search");
+           buttonSertch.classList.add("change");
+           buttonSertch.classList.add("search--button__button--background");
+        
+           buttonSertch.addEventListener("mouseenter",addBorder);
+           buttonSertch.addEventListener("mouseleave", function () {
+            if (!clickOrNot) {
+            this.classList.remove('button-border-hover');
+            this.classList.add('button-border');
+               }
+            });
+            buttonSertch.addEventListener("click",function(){
+            clickOrNot=true;
+            addBorder();
+            });
+           let buttonLucky = document.createElement("button")
+           buttonLucky.addEventListener("mouseenter",addBorder);
+           buttonLucky.addEventListener("mouseleave",removeBorder);
+           buttonLucky.addEventListener("click", function () {
+           clickOrNot = false;
+           buttonSertch.removeBorder();
+           addBorder();
+           });
+           buttonLucky.classList.add("change");
+           buttonLucky.classList.add("button-border");
+           buttonLucky.classList.add("search--button--lucky");
+           buttonLucky.classList.add("search--button__button");
+           buttonLucky.classList.add("search--button__button--background");
+           buttonSertch.innerText="Google 搜索";
+           buttonLucky.innerText="手气不错";
+           searchButtonDiv.append(buttonSertch);
+           searchButtonDiv.append(buttonLucky);       
+}
+//收索下拉框footer
+function addFooterToSearchArea(){
+    let footerDiv= document.createElement("div")
+    footerDiv.classList.add("search--area__form--data--bottom");
+    footerDiv.innerText="举报不当的联想查询";
+    searchDataElem.append(footerDiv);
+}
+//reset按钮显现
+function deletImgDisplay(){
+    deleteImg.classList.remove("search--area__form--right--hide");
+    deleteLine.classList.remove("search--area__form--right--hide");
+    deleteImg.classList.add("search--area__form--right--display");
+    deleteLine.classList.add("search--area__form--right--display");
+}
+function serchFrameElemCssRecover(){
+    if(!inputSearchFocusOrNot){
+    serchFrameElem.classList.remove('search--area__form--background');
+    inputElem.classList.remove("search--area__form--background")
+    maikeImg.classList.add("search--area__form--right--maike");
+    maikeImg.classList.remove("search--button--searchimg")
+    maikeImg.src="img/img-google/maike.png";
+    searchImg.src="img/img-google/search.png";
+    pictureImg.src="img/img-google/picture.png";
+    pictureImg.classList.remove("search--area__form--right--picture--hover");
+    serchFrameElem.classList.remove("border--none");
+    }
 }
 </script>

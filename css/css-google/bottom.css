@@ -1,13 +1,14 @@
 .bottom{
     width: 100%;
     position: fixed;
-    z-index: 999;
+    z-index: 3;
     height: 49px;
     display: flex;
     justify-content: space-between;
     background-color: #1a1a1b;
     left: 0;
     bottom: 0;
+    
     color: #e8e8e8;
 }
 .bottom__a{

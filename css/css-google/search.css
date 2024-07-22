@@ -17,8 +17,9 @@
 }
 .search--area{
    width: 100%;
-   height: 50px;
+   height: auto;
    display: flex;
+   flex-direction: column; /* 垂直排列子元素 */
    justify-content: center;
    align-items: center;
    margin-top: 26px;
@@ -37,13 +38,28 @@
     margin-left: 12px;
 }
 .search--area__form{
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    width: 582px;
+    height: auto;
+    border: 1px solid #5f6368;
+    border-radius: 30px;
+    z-index: 4;
+    position: relative;
+}
+.search--area__form--top
+{
+    height:46px ;
+    width: 100%;
+  
+}
+.search--area__form--top__div{
+    width: 582px;
+    height:46px ;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 582px;
-    height: 46px;
-    border: 1px solid #5f6368;
-    border-radius: 50px;
 }
 
 .search--area__form--left{
@@ -69,8 +85,14 @@
     border-left: 1px solid #5f6368;
     height: 28px;
     margin-left: 10px;
-    visibility: hidden;
 }
+.search--area__form--right--display{
+    visibility:visible;
+}
+.search--area__form--right--hide{
+    visibility:hidden;
+}
+
 .search--area__form--right--maike{
     width:37px ;
     height: 35px;
@@ -84,8 +106,8 @@
 .search--area__form--right--hidden{
   width: 18px;
   height: 18px;
-  visibility: hidden;
 }
+
 .search--area__form--right--picture{
     width:21.5px ;
     height: 20px;
@@ -108,7 +130,6 @@
     margin-top: 17px;
 }
 .search--button__button{
-  background-color: #303134;
   border-radius: 4px;
   color: #e8eaed;
   font-family: Arial, sans-serif;
@@ -142,4 +163,82 @@
     margin-right: 12px;
     margin-bottom: 1px;
     
+}
+.search--area__form--data--row{
+    display: flex;
+    align-items: center;
+    color: #e8e8e8;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    height: 34px;
+}
+.search--area__form--data--row--margin{
+    margin-top:10px;
+}
+.search--area__form--data--row--first--row{
+    margin-top:5px;
+}
+.search--area__form--data--row__nothing{
+    width: 16px;
+    height: 16px;
+    margin-left: 15px;
+}
+.search--area__form--data--row__img{
+    margin-left: 8px;
+    width: 32px;
+    height: 32px;
+}
+
+.diaplay--none{
+    display: none;
+}
+
+.search--area__form--data--row__div{
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    margin-left: 5px;
+}
+.search--area__form--data--row__author{
+    line-height: 12px;
+    font-size: 13px;
+    color: #9aa0a6;
+    margin-top: 2px;
+    padding-right: 8px;
+}
+.search--area__form--data--row__span{
+    margin-left: 14px;
+}
+.search--area__form--data--row__span__none-img{
+    margin-left: 10px;
+}
+.button--background{
+    background-color: #303134;
+}
+.search--button__button--background{
+    background-color:  #3c4043;
+}
+.search--area__form--data--bottom{
+    text-align: end;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: -16px;
+    color: #9e9e9e;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.border--none{
+    border: none;
+}
+
+
+.search--area--line{
+    width: 94%;
+    height: 1px;
+    background-color: #5f6368;
+    margin-left: 3%;
+}
+.row-hover-background{
+    background-color: #3e4042;
 }

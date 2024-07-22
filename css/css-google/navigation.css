@@ -83,7 +83,6 @@
     font-family:  Helvetica, Arial, sans-serif;
     margin:10px 8px ;
     border-radius: 10%;
-    
 }
 .navigation__nav__dialog--display--type--box div{
     width: 100%;
@@ -116,7 +115,7 @@
    width: 7px; 
 }
 /* 轨道 */
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track{
     height: 50%;
     display: none;
   }
