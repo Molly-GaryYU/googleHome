@@ -13,40 +13,31 @@
             <!-- 导航栏 -->
             <div class="navigation">
                 <nav class="navigation__nav ">
-                  
-                        <div class="navigation__nav--img ">
-                            <a href="aaa" alt="">图片</a>
+                    <a class="navigation__nav--img" href="aaa" alt="">图片</a>
+                    <div class="navigation__nav--more " id="nine-point">
+                        <img class="navigation__nav--more__img" src="img/img-google/ninePoint.png" alt="">
+                    </div>
+                    <div id="navigation__nav__dialog" class="navigation__nav__dialog" style="display: none;">
+                        <div id="navigation__nav__dialog--display" class="navigation__nav__dialog--display">
+                            <!-- 内容填充 -->
                         </div>
-                        <div class="navigation__nav--more " id="ninePoint">
-                            <img class="navigation__nav--more__img" src="img/img-google/ninePoint.png" alt="">
-                        </div>
-                        <div id="navigation__nav__dialog" class="navigation__nav__dialog" style="display: none;">
-                            <div id="navigation__nav__dialog--display" class="navigation__nav__dialog--display">
-                                  <!-- 内容填充 -->
-                            </div>
-                        </div>
-                        <div class="navigation__nav--login">
-                            <a class="navigation__nav--login__a">登录</a>
-                        </div>
-                    
+                    </div>
+                    <a class="navigation__nav--login__a navigation__nav--login">登录</a>
                 </nav>
             </div>
              <!-- 搜索栏 -->
              <div id="main-search" class="search">
                  <!-- logo -->
-                 <div class="search--logo flex--center">
                     <img class="search--logo__img" src="img\img-google\logo.png" alt="">
-                 </div>
                 <!-- 搜索框+按钮 -->
                 <div id="search--area" class="search--area">
                     <!-- 搜索框 -->
-
                     <div class="search--area__form" id="serch--frame">
                         <div class="search--area__form--top">
                             <div class="search--area__form--top__div" id="search--area__form--top__div">
                                 <!-- 搜索框左-->
                                 <div class="search--area__form--left ">
-                                    <img id="searchImg" class="search--area__form--left__img" src="img\img-google\search.png" alt="">
+                                    <img id="search-img" class="search--area__form--left__img" src="img\img-google\search.png" alt="">
                                     <input id="search--area__form__input--input" class="search--area__form__input" >
                                 </div>
                                 <!-- 搜索框右-->
@@ -67,12 +58,12 @@
                 </div>
                   <!-- 按钮 -->
                   <div id="search--button" class="search--button">
-                        <button id="buttonSertch" class="button--background button-border search--button__button search--button--search">Google 搜索</button>
-                        <button id="buttonLucky" class="button--background button-border search--button__button search--button--lucky">手气不错</button>
+                        <button id="button-sertch" class="button--background button-border search--button__button search--button--search">Google 搜索</button>
+                        <button id="button-lucky" class="button--background button-border search--button__button search--button--lucky">手气不错</button>
                   </div>
              </div>
              <!-- 版权 -->
-             <div class="bottom">
+             <footer class="bottom">
                   <nav class="bottom--left">
                     <a class="bottom__a">关于 Google</a>
                     <a class="bottom__a">广告</a>
@@ -84,7 +75,7 @@
                     <a class="bottom__a">条款</a>
                     <a class="bottom__a">设置</a>
                   </nav>
-             </div>
+             </footer>
         </div>
     </body>
 </html>
@@ -106,13 +97,13 @@ const searchData=[
 {name:"啊的变调",img:false,imgUrl:"img/img-google/hoverSearch.png",introduce:"",introduceOrNot:false}
 ];
 const searchArea=document.getElementById('search--area')
-const ninePointElem=document.getElementById('ninePoint');
-const buttonLuckyElem=document.getElementById('buttonLucky')
-const buttonSertchElem=document.getElementById('buttonSertch')
+const ninePointElem=document.getElementById('nine-point');
+const buttonLuckyElem=document.getElementById('button-lucky')
+const buttonSertchElem=document.getElementById('button-sertch')
 const displayElem=document.getElementById('navigation__nav__dialog--display');
 const dialog=document.getElementById('navigation__nav__dialog');
 const serchFrameElem=document.getElementById('serch--frame');
-const searchImg=document.getElementById('searchImg');
+const searchImg=document.getElementById('search-img');
 const maikeImg=document.getElementById('maike');
 const pictureImg=document.getElementById('picture');
 const inputElem=document.getElementById('search--area__form__input--input');
@@ -135,11 +126,11 @@ ninePointElem.addEventListener("click",()=>{
     dialog.style.display='block';
     clickNum++;
     if(clickNum==1){
-      analysMoreData(moreData);
+        analysisMoreData(moreData);
     }
 })
 //抽屉展开
-dialog.addEventListener("click",function(event){
+dialog.addEventListener("click",(event)=>{
        //点击是否在抽屉内
        let orNot=!dialog.contains(event.target)
       if(orNot){
@@ -152,19 +143,19 @@ ninePointElem.addEventListener("mouseleave",ninepointRemoveBackground);
 buttonLuckyElem.addEventListener("mouseenter",addBorder);
 buttonLuckyElem.addEventListener("mouseleave",removeBorder);
 buttonSertchElem.addEventListener("mouseenter",addBorder);
-buttonSertchElem.addEventListener("mouseleave",function(){
+buttonSertchElem.addEventListener("mouseleave",()=>{
     if(!clickOrNot){
    this.classList.remove('button-border-hover');
    this.classList.add('button-border');
     }
 });
-buttonLuckyElem.addEventListener("click",function(){
+buttonLuckyElem.addEventListener("click",()=>{
     clickOrNot=false;
     buttonSertchElem.classList.remove('button-border-hover');
     buttonSertchElem.classList.add('button-border');
     addBorder();
 });
-buttonSertchElem.addEventListener("click",function(){
+buttonSertchElem.addEventListener("click",()=>{
     clickOrNot=true;
     addBorder();
 });
@@ -203,7 +194,6 @@ totalHtml.addEventListener("click",(event)=>{
         searchDataElem.innerHTML='';
     }
     else if(ninePointElem.contains(sign)){
-        console.log(child);
          console.log("抽屉按钮点击");
          if( inputElem.value=="" ||inputElem.value==null){
             inputSearchFocusOrNot=false;
@@ -218,7 +208,6 @@ totalHtml.addEventListener("click",(event)=>{
     }
     else{
          let child= document.getElementsByClassName("change");
-         console.log(child);
          console.log("页面点击");
          if( inputElem.value=="" ||inputElem.value==null){
             inputSearchFocusOrNot=false;
@@ -246,7 +235,7 @@ totalHtml.addEventListener("click",(event)=>{
 
 // 方法
   //抽屉内容更新
-function analysMoreData(data){
+function analysisMoreData(data){
     data.forEach((element,i) => {
         //每一个大类就添加一个父标签div
         // let divSign ="<div id=\"navigation__nav__dialog--display--box \" class=\"navigation__nav__dialog--display--box \">"+"<ul>"+"</ul>";
@@ -263,6 +252,7 @@ function analysMoreData(data){
         box.classList.add('navigation__nav__dialog--display--type--box');
         BigBox_child.append(box);
         box_div=document.createElement("div");
+        box_div.classList.add("navigation__nav__dialog--display--type--box__div")
         box.append(box_div);
         let box_div_img=document.createElement("img");
         box_div.append(box_div_img);
